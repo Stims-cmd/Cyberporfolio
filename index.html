@@ -1,1 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ton Nom — Portfolio</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --bg-soft: #161923;
+    --text: #eceef2;
+    --text-dim: #9298a8;
+    --accent: #5eead4;
+    --border: #262a36;
+  }
 
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  a { color: inherit; }
+
+  header {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  .eyebrow {
+    color: var(--accent);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .tagline {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    max-width: 480px;
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1.5rem 6rem;
+  }
+
+  section { margin-bottom: 3.5rem; }
+
+  h2 {
+    font-size: 1rem;
+    text-transform: none;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .project {
+    display: block;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg-soft);
+    margin-bottom: 1rem;
+    text-decoration: none;
+    transition: border-color 0.15s ease;
+  }
+
+  .project:hover { border-color: var(--accent); }
+
+  .project h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .project p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+  }
+
+  .contact-list {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-list a {
+    text-decoration: none;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+  }
+
+  .contact-list a:hover { border-color: var(--accent); }
+
+  footer {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Portfolio</div>
+  <h1>Bonjour, moi c'est Simon DUCHANAUD !</h1>
+  <p class="tagline">[Une phrase courte sur ce que tu fais — développeur, designer, étudiant, etc.]</p>
+</header>
+
+<main>
+  <section>
+    <h2>Projets</h2>
+
+    <a class="project" href="#">
+      <h3>Nom du projet 1</h3>
+      <p>Description rapide du projet et des technos utilisées.</p>
+    </a>
+
+    <a class="project" href="#">
+      <h3>Nom du projet 2</h3>
+      <p>Description rapide du projet et des technos utilisées.</p>
+    </a>
+
+    <a class="project" href="#">
+      <h3>Nom du projet 3</h3>
+      <p>Description rapide du projet et des technos utilisées.</p>
+    </a>
+  </section>
+
+  <section>
+    <h2>À propos</h2>
+    <p>[Quelques lignes sur ton parcours, tes centres d'intérêt techniques, ce que tu cherches.]</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="contact-list">
+      <a href="mailto:ton.email@example.com">Email</a>
+      <a href="https://github.com/ton-pseudo" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/ton-pseudo" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Fait avec du HTML/CSS pur — hébergé sur GitHub Pages.
+</footer>
+
+</body>
+</html>
