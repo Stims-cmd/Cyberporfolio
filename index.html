@@ -2,56 +2,60 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simon DUCHANAUD - Portfolio</title>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>[TON NOM] — Portfolio</title>
+<meta name="description" content="[DESCRIPTION] — portfolio interactif sous forme de bureau virtuel.">
+<meta property="og:title" content="[TON NOM] — Portfolio">
+<meta property="og:description" content="[DESCRIPTION]">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/windows.css">
+<link rel="stylesheet" href="./css/mobile.css">
 </head>
 <body>
 
-<header>
-  <div class="eyebrow">Portfolio</div>
-  <h1>Salut, moi c'est Simon Duchanaud !</h1>
-  <p class="tagline">[Une phrase courte sur ce que tu fais — développeur, designer, étudiant, etc.]</p>
-</header>
+<!-- Fallback si JS désactivé -->
+<noscript>
+  <div class="noscript-fallback">
+    <h1>[TON NOM] — Portfolio</h1>
+    <p>Ce portfolio utilise JavaScript pour son interface de bureau virtuel. Voici une version statique :</p>
+    <ul>
+      <li><a href="./data/projects.json">Projets (données brutes)</a></li>
+      <li><a href="./assets/cv/cv.pdf">CV (PDF)</a></li>
+      <li><a href="mailto:ton.email@example.com">Contact</a></li>
+      <li><a href="https://github.com/ton-pseudo" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </div>
+</noscript>
 
-<main>
-  <section>
-    <h2>Projets</h2>
+<div id="desktop" class="desktop" aria-label="Bureau du portfolio">
+  <div id="icons" class="icons" role="list"></div>
+  <div id="windows-layer" class="windows-layer"></div>
+</div>
 
-    <a class="project" href="#">
-      <h3>Nom du projet 1</h3>
-      <p>Description rapide du projet et des technos utilisées.</p>
-    </a>
+<nav id="taskbar" class="taskbar" aria-label="Barre des tâches">
+  <button id="start-btn" class="start-btn" aria-haspopup="true" aria-expanded="false">
+    <span class="start-icon">◆</span> Menu
+  </button>
+  <div id="start-menu" class="start-menu" hidden role="menu"></div>
+  <div id="taskbar-windows" class="taskbar-windows" role="list"></div>
+  <div id="clock" class="clock" aria-live="off"></div>
+</nav>
 
-    <a class="project" href="#">
-      <h3>Nom du projet 2</h3>
-      <p>Description rapide du projet et des technos utilisées.</p>
-    </a>
+<div id="live-region" class="sr-only" aria-live="polite"></div>
 
-    <a class="project" href="#">
-      <h3>Nom du projet 3</h3>
-      <p>Description rapide du projet et des technos utilisées.</p>
-    </a>
-  </section>
-
-  <section>
-    <h2>À propos</h2>
-    <p>[Quelques lignes sur ton parcours, tes centres d'intérêt techniques, ce que tu cherches.]</p>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <div class="contact-list">
-      <a href="mailto:ton.email@example.com">Email</a>
-      <a href="https://github.com/ton-pseudo" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://linkedin.com/in/ton-pseudo" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-  </section>
-</main>
-
-<footer>
-  Fait avec du HTML/CSS pur — hébergé sur GitHub Pages.
-</footer>
-
+<script src="./js/data.js"></script>
+<script src="./js/windowManager.js"></script>
+<script src="./js/apps/about.js"></script>
+<script src="./js/apps/projects.js"></script>
+<script src="./js/apps/skills.js"></script>
+<script src="./js/apps/journey.js"></script>
+<script src="./js/apps/lab.js"></script>
+<script src="./js/apps/motorsport.js"></script>
+<script src="./js/apps/cv.js"></script>
+<script src="./js/apps/github.js"></script>
+<script src="./js/apps/contact.js"></script>
+<script src="./js/app.js"></script>
 </body>
 </html>

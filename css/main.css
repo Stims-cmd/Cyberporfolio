@@ -1,0 +1,221 @@
+:root {
+  --bg-0: #0d0f14;
+  --bg-1: #141822;
+  --bg-2: #1b2130;
+  --panel: rgba(22, 27, 38, 0.72);
+  --border: #2a3142;
+  --text: #eef1f7;
+  --text-dim: #8b93a7;
+  --accent: #5eead4;
+  --accent-soft: rgba(94, 234, 212, 0.15);
+  --danger: #f87171;
+  --warn: #fbbf24;
+  --radius: 10px;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  --taskbar-h: 56px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 20% 10%, #1a2030 0%, var(--bg-0) 55%);
+  overflow: hidden;
+}
+
+button { font-family: inherit; cursor: pointer; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+.noscript-fallback {
+  max-width: 640px; margin: 4rem auto; padding: 0 1.5rem; line-height: 1.7;
+  color: #eef1f7; background: #0d0f14;
+}
+
+/* ---------- Bureau ---------- */
+.desktop {
+  position: relative;
+  width: 100%;
+  height: calc(100% - var(--taskbar-h));
+  overflow: hidden;
+  background-image:
+    radial-gradient(circle at 80% 85%, rgba(94,234,212,0.06), transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(94,234,212,0.04), transparent 40%);
+}
+
+.icons {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 84px);
+  grid-auto-rows: 88px;
+  gap: 0.5rem;
+}
+
+.icon-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 84px;
+  height: 84px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  color: var(--text);
+  padding: 0.5rem 0.25rem;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+.icon-btn:hover,
+.icon-btn:focus-visible {
+  background: rgba(255,255,255,0.06);
+  border-color: var(--border);
+  outline: none;
+}
+.icon-btn .icon-glyph {
+  font-size: 1.9rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
+}
+.icon-btn .icon-label {
+  font-size: 0.72rem;
+  text-align: center;
+  color: var(--text-dim);
+  line-height: 1.2;
+}
+
+/* ---------- Taskbar ---------- */
+.taskbar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: var(--taskbar-h);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0 0.8rem;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: var(--panel);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--border);
+  z-index: 10000;
+}
+
+.start-btn {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.start-btn:hover { border-color: var(--accent); }
+.start-icon { font-size: 0.8rem; }
+
+.start-menu {
+  position: absolute;
+  bottom: calc(var(--taskbar-h) + 8px);
+  left: 0.8rem;
+  width: 220px;
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.start-menu button {
+  display: flex; align-items: center; gap: 0.6rem;
+  background: none; border: none; color: var(--text);
+  padding: 0.5rem 0.6rem; border-radius: 6px; text-align: left; font-size: 0.85rem;
+}
+.start-menu button:hover, .start-menu button:focus-visible { background: rgba(255,255,255,0.06); outline: none; }
+
+.taskbar-windows {
+  display: flex;
+  gap: 0.4rem;
+  flex: 1;
+  overflow-x: auto;
+}
+.taskbar-item {
+  display: flex; align-items: center; gap: 0.4rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid transparent;
+  color: var(--text-dim);
+  padding: 0.4rem 0.7rem;
+  border-radius: 7px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+.taskbar-item[data-active="true"] {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.clock {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  min-width: 64px;
+  text-align: right;
+}
+
+/* ---------- Contenu générique dans les fenêtres ---------- */
+.app-content { padding: 1.1rem 1.3rem; overflow-y: auto; height: 100%; font-size: 0.92rem; line-height: 1.6; }
+.app-content h2 { font-size: 1rem; color: var(--text-dim); margin: 1.4rem 0 0.6rem; font-weight: 600; }
+.app-content h2:first-child { margin-top: 0; }
+.app-content p { margin: 0 0 0.6rem; }
+.placeholder { color: var(--text-dim); font-style: italic; }
+
+.tag {
+  display: inline-flex; align-items: center;
+  background: var(--accent-soft); color: var(--accent);
+  border: none; border-radius: 999px;
+  padding: 0.25rem 0.7rem; font-size: 0.75rem; margin: 0 0.3rem 0.3rem 0;
+}
+.tag:hover, .tag:focus-visible { background: var(--accent); color: var(--bg-0); outline: none; }
+
+.card-list { display: flex; flex-direction: column; gap: 0.7rem; }
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem;
+  text-align: left;
+  color: var(--text);
+}
+.card button.card-open {
+  background: none; border: none; color: var(--text); text-align: left;
+  width: 100%; padding: 0; font: inherit; cursor: pointer;
+}
+.card:hover, .card:focus-within { border-color: var(--accent); }
+.card h3 { margin: 0 0 0.3rem; font-size: 0.98rem; }
+.card .meta { color: var(--text-dim); font-size: 0.78rem; margin-bottom: 0.4rem; }
+.card .desc { color: var(--text-dim); font-size: 0.85rem; }
+
+.section-detail dt { color: var(--text-dim); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.9rem; }
+.section-detail dd { margin: 0.25rem 0 0; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: var(--accent); color: var(--bg-0);
+  border: none; border-radius: 7px;
+  padding: 0.5rem 0.9rem; font-weight: 600; font-size: 0.82rem;
+  text-decoration: none;
+}
+.btn.secondary { background: rgba(255,255,255,0.08); color: var(--text); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

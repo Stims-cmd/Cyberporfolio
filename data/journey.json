@@ -1,0 +1,35 @@
+[
+  {
+    "id": "step-01",
+    "date": "2022",
+    "title": "[Découverte du développement]",
+    "context": "[Contexte de cette étape]",
+    "achievements": "[Ce que tu as réalisé]",
+    "technologies": ["html", "css"],
+    "skills": ["frontend"],
+    "projects": [],
+    "github": ""
+  },
+  {
+    "id": "step-02",
+    "date": "2023",
+    "title": "[Premier projet]",
+    "context": "[Contexte]",
+    "achievements": "[Réalisations]",
+    "technologies": ["javascript"],
+    "skills": ["frontend"],
+    "projects": ["project-01"],
+    "github": ""
+  },
+  {
+    "id": "step-03",
+    "date": "Aujourd'hui",
+    "title": "[Où tu en es maintenant]",
+    "context": "[Contexte]",
+    "achievements": "[Réalisations]",
+    "technologies": [],
+    "skills": [],
+    "projects": [],
+    "github": ""
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "roles": [
+    {
+      "id": "mecanicien",
+      "label": "🔧 Mécanicien d'assistance",
+      "description": "[Spécificités de ce rôle — à personnaliser]"
+    },
+    {
+      "id": "commissaire",
+      "label": "🚩 Commissaire",
+      "description": "[Spécificités de ce rôle — à personnaliser]"
+    }
+  ],
+  "events": [
+    {
+      "id": "event-01",
+      "name": "[Nom du rallye / événement]",
+      "date": "2025",
+      "location": "[Lieu]",
+      "role": "mecanicien",
+      "description": "[Description de l'événement]",
+      "experience": "[Ce que tu as vécu]",
+      "skills": ["travail-equipe", "diagnostic"],
+      "photos": []
+    },
+    {
+      "id": "event-02",
+      "name": "[Nom du rallye / événement]",
+      "date": "2024",
+      "location": "[Lieu]",
+      "role": "commissaire",
+      "description": "[Description]",
+      "experience": "[Expérience vécue]",
+      "skills": ["reactivite", "procedures"],
+      "photos": []
+    }
+  ],
+  "skillsCatalog": [
+    { "id": "travail-equipe", "label": "Travail en équipe" },
+    { "id": "diagnostic", "label": "Diagnostic" },
+    { "id": "reactivite", "label": "Réactivité" },
+    { "id": "procedures", "label": "Respect des procédures" },
+    { "id": "imprevus", "label": "Gestion des imprévus" }
+  ]
+}

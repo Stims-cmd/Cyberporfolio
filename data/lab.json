@@ -1,0 +1,20 @@
+[
+  {
+    "id": "lab-01",
+    "title": "[Nom de l'expérience]",
+    "technology": "CSS",
+    "objective": "[Ce que tu cherchais à tester]",
+    "result": "[Résultat obtenu]",
+    "learned": "[Ce que tu as appris]",
+    "github": ""
+  },
+  {
+    "id": "lab-02",
+    "title": "[Autre expérience — ex : mini-jeu Canvas]",
+    "technology": "Canvas / JavaScript",
+    "objective": "[Objectif du test]",
+    "result": "[Résultat]",
+    "learned": "[Apprentissage]",
+    "github": ""
+  }
+]

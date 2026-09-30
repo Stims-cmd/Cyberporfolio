@@ -1,0 +1,45 @@
+[
+  {
+    "id": "project-01",
+    "title": "[NOM DU PROJET 1]",
+    "shortDescription": "[Description courte — une phrase]",
+    "date": "2026",
+    "status": "Terminé",
+    "context": "[Projet personnel / scolaire / professionnel]",
+    "type": "Application Web",
+    "problem": "[Quel problème ou besoin ce projet résout-il ?]",
+    "goals": [
+      "[Objectif 1]",
+      "[Objectif 2]"
+    ],
+    "technologies": ["javascript", "html", "css", "git"],
+    "skills": ["frontend", "ui-ux"],
+    "challenges": "[Principales difficultés rencontrées]",
+    "solutions": "[Choix techniques et solutions mises en place]",
+    "result": "[Résultat final obtenu]",
+    "links": {
+      "demo": "",
+      "github": "https://github.com/ton-pseudo/projet-1",
+      "docs": ""
+    },
+    "images": []
+  },
+  {
+    "id": "project-02",
+    "title": "[NOM DU PROJET 2]",
+    "shortDescription": "[Description courte — une phrase]",
+    "date": "2025",
+    "status": "En cours",
+    "context": "[Contexte]",
+    "type": "Outil / Script",
+    "problem": "[Problème adressé]",
+    "goals": ["[Objectif]"],
+    "technologies": ["python", "git"],
+    "skills": ["backend", "algo"],
+    "challenges": "[Difficultés]",
+    "solutions": "[Solutions]",
+    "result": "[Résultat]",
+    "links": { "demo": "", "github": "", "docs": "" },
+    "images": []
+  }
+]

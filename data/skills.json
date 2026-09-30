@@ -1,0 +1,27 @@
+[
+  {
+    "domain": "Développement Web",
+    "skills": [
+      { "id": "html", "name": "HTML", "level": 70, "description": "[À personnaliser]" },
+      { "id": "css", "name": "CSS", "level": 65, "description": "[À personnaliser]" },
+      { "id": "javascript", "name": "JavaScript", "level": 60, "description": "[À personnaliser]" },
+      { "id": "typescript", "name": "TypeScript", "level": 40, "description": "[À personnaliser]" },
+      { "id": "frontend", "name": "Frontend", "level": 55, "description": "[À personnaliser]" }
+    ]
+  },
+  {
+    "domain": "Programmation",
+    "skills": [
+      { "id": "python", "name": "Python", "level": 50, "description": "[À personnaliser]" },
+      { "id": "algo", "name": "Algorithmique", "level": 45, "description": "[À personnaliser]" },
+      { "id": "backend", "name": "Backend", "level": 40, "description": "[À personnaliser]" }
+    ]
+  },
+  {
+    "domain": "Outils",
+    "skills": [
+      { "id": "git", "name": "Git", "level": 60, "description": "[À personnaliser]" },
+      { "id": "ui-ux", "name": "UI / UX", "level": 50, "description": "[À personnaliser]" }
+    ]
+  }
+]

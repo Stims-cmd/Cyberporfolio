@@ -1,0 +1,28 @@
+@media (max-width: 768px) {
+  .icons {
+    top: 1rem; left: 1rem; right: 1rem;
+    grid-template-columns: repeat(auto-fill, 72px);
+    grid-auto-rows: 78px;
+  }
+  .icon-btn { width: 72px; height: 72px; }
+  .icon-btn .icon-glyph { font-size: 1.6rem; }
+
+  .window {
+    top: 3vh !important;
+    left: 3vw !important;
+    width: 94vw !important;
+    height: 88vh !important;
+    resize: none;
+  }
+  .resize-handle { display: none; }
+  .window-titlebar { cursor: default; }
+
+  .start-menu { width: 72vw; }
+  .taskbar-item .taskbar-item-label { display: none; }
+  .taskbar-item { padding: 0.4rem 0.55rem; }
+}
+
+@media (max-width: 480px) {
+  .clock { min-width: 0; font-size: 0.72rem; }
+  .start-btn span:last-child { display: none; }
+}
