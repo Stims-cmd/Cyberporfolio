@@ -8,6 +8,8 @@
   --text-dim: #8b93a7;
   --accent: #5eead4;
   --accent-soft: rgba(94, 234, 212, 0.15);
+  --accent-2: #ffb454;
+  --accent-2-soft: rgba(255, 180, 84, 0.15);
   --danger: #f87171;
   --warn: #fbbf24;
   --radius: 10px;
@@ -44,21 +46,37 @@ button { font-family: inherit; cursor: pointer; }
   height: calc(100% - var(--taskbar-h));
   overflow: hidden;
   background-image:
-    radial-gradient(circle at 80% 85%, rgba(94,234,212,0.06), transparent 45%),
-    radial-gradient(circle at 10% 90%, rgba(94,234,212,0.04), transparent 40%);
+    radial-gradient(circle at 80% 85%, rgba(255,180,84,0.07), transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(94,234,212,0.08), transparent 42%),
+    radial-gradient(circle at 60% 15%, rgba(94,234,212,0.05), transparent 38%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 48px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 48px);
+}
+
+/* petites touches "cybersécurité" en fond, décoratives et non interactives */
+.desktop::after {
+  content: "🔒  ⌁  🛡️  ⌁  📡  ⌁  🔑";
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.85rem;
+  letter-spacing: 1.2rem;
+  color: rgba(255,255,255,0.05);
+  pointer-events: none;
+  user-select: none;
 }
 
 .icons {
   position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 84px);
-  grid-auto-rows: 88px;
-  gap: 0.5rem;
+  inset: 0;
+  pointer-events: none;
 }
+.icons .icon-btn { pointer-events: auto; }
 
 .icon-btn {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,9 +89,9 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: var(--radius);
   color: var(--text);
   padding: 0.5rem 0.25rem;
-  transition: background 0.12s ease, border-color 0.12s ease;
+  transition: background 0.12s ease, border-color 0.12s ease, transform 0.12s ease;
 }
-.icon-btn:hover,
+.icon-btn:hover { transform: translateY(-2px); }
 .icon-btn:focus-visible {
   background: rgba(255,255,255,0.06);
   border-color: var(--border);
@@ -106,40 +124,6 @@ button { font-family: inherit; cursor: pointer; }
   border-top: 1px solid var(--border);
   z-index: 10000;
 }
-
-.start-btn {
-  display: flex; align-items: center; gap: 0.5rem;
-  background: var(--accent-soft);
-  color: var(--accent);
-  border: 1px solid transparent;
-  border-radius: 8px;
-  padding: 0.5rem 0.9rem;
-  font-weight: 600;
-  font-size: 0.85rem;
-}
-.start-btn:hover { border-color: var(--accent); }
-.start-icon { font-size: 0.8rem; }
-
-.start-menu {
-  position: absolute;
-  bottom: calc(var(--taskbar-h) + 8px);
-  left: 0.8rem;
-  width: 220px;
-  background: var(--bg-1);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 0.4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.start-menu button {
-  display: flex; align-items: center; gap: 0.6rem;
-  background: none; border: none; color: var(--text);
-  padding: 0.5rem 0.6rem; border-radius: 6px; text-align: left; font-size: 0.85rem;
-}
-.start-menu button:hover, .start-menu button:focus-visible { background: rgba(255,255,255,0.06); outline: none; }
 
 .taskbar-windows {
   display: flex;

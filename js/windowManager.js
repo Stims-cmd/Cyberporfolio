@@ -134,6 +134,7 @@ const WindowManager = (() => {
     el.dataset.open = "false";
     el.dataset.minimized = "false";
     el.dataset.maximized = isMobile() ? "true" : "false";
+    if (app.theme) el.classList.add(`theme-${app.theme}`);
 
     openOffset = (openOffset + 28) % 160;
     if (!isMobile()) {

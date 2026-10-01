@@ -50,6 +50,7 @@
     icon: "🏁",
     width: 560,
     height: 480,
+    theme: "garage",
     render,
   });
 })();
